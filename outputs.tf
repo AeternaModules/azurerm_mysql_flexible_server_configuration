@@ -1,3 +1,7 @@
+output "mysql_flexible_server_configurations_id" {
+  description = "Map of id values across all mysql_flexible_server_configurations, keyed the same as var.mysql_flexible_server_configurations"
+  value       = { for k, v in azurerm_mysql_flexible_server_configuration.mysql_flexible_server_configurations : k => v.id }
+}
 output "mysql_flexible_server_configurations_name" {
   description = "Map of name values across all mysql_flexible_server_configurations, keyed the same as var.mysql_flexible_server_configurations"
   value       = { for k, v in azurerm_mysql_flexible_server_configuration.mysql_flexible_server_configurations : k => v.name }
